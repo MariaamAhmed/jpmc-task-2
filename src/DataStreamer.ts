@@ -23,7 +23,7 @@ class DataStreamer {
    */
   static getData(callback: (data: ServerRespond[]) => void): void {
     const request = new XMLHttpRequest();
-    request.open('GET', DataStreamer.API_URL, false);
+    request.open('GET', DataStreamer.API_URL, true);
 
     request.onload = () => {
       if (request.status === 200) {
@@ -32,7 +32,6 @@ class DataStreamer {
         alert ('Request failed');
       }
     }
-
     request.send();
   }
 }
